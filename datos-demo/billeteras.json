@@ -1,0 +1,85 @@
+[ {
+  "codigo" : "BIL-000001",
+  "identificacionPropietario" : "1001",
+  "nombre" : "Ahorro principal",
+  "tipo" : "AHORRO",
+  "saldo" : 2230000,
+  "estado" : "ACTIVA"
+}, {
+  "codigo" : "BIL-000002",
+  "identificacionPropietario" : "1001",
+  "nombre" : "Inversiones",
+  "tipo" : "INVERSION",
+  "saldo" : 850000,
+  "estado" : "ACTIVA"
+}, {
+  "codigo" : "BIL-000003",
+  "identificacionPropietario" : "1001",
+  "nombre" : "Gastos del mes",
+  "tipo" : "GASTOS_DIARIOS",
+  "saldo" : 310000,
+  "estado" : "ACTIVA"
+}, {
+  "codigo" : "BIL-000004",
+  "identificacionPropietario" : "1002",
+  "nombre" : "Ahorros",
+  "tipo" : "AHORRO",
+  "saldo" : 387000,
+  "estado" : "ACTIVA"
+}, {
+  "codigo" : "BIL-000005",
+  "identificacionPropietario" : "1002",
+  "nombre" : "Transporte",
+  "tipo" : "TRANSPORTE",
+  "saldo" : 60000,
+  "estado" : "ACTIVA"
+}, {
+  "codigo" : "BIL-000006",
+  "identificacionPropietario" : "1003",
+  "nombre" : "Compras",
+  "tipo" : "COMPRAS",
+  "saldo" : 280000,
+  "estado" : "ACTIVA"
+}, {
+  "codigo" : "BIL-000007",
+  "identificacionPropietario" : "1003",
+  "nombre" : "Suscripciones",
+  "tipo" : "SUSCRIPCIONES",
+  "saldo" : 0,
+  "estado" : "INACTIVA"
+}, {
+  "codigo" : "BIL-000008",
+  "identificacionPropietario" : "1004",
+  "nombre" : "Gastos",
+  "tipo" : "GASTOS_DIARIOS",
+  "saldo" : 56000,
+  "estado" : "ACTIVA"
+}, {
+  "codigo" : "BIL-000009",
+  "identificacionPropietario" : "1005",
+  "nombre" : "Ahorros",
+  "tipo" : "AHORRO",
+  "saldo" : 160000,
+  "estado" : "ACTIVA"
+}, {
+  "codigo" : "BIL-000010",
+  "identificacionPropietario" : "1005",
+  "nombre" : "Compras en línea",
+  "tipo" : "COMPRAS",
+  "saldo" : 15000,
+  "estado" : "ACTIVA"
+}, {
+  "codigo" : "BIL-000011",
+  "identificacionPropietario" : "1006",
+  "nombre" : "Ahorros",
+  "tipo" : "AHORRO",
+  "saldo" : 95000,
+  "estado" : "ACTIVA"
+}, {
+  "codigo" : "BIL-000012",
+  "identificacionPropietario" : "1007",
+  "nombre" : "Gastos",
+  "tipo" : "GASTOS_DIARIOS",
+  "saldo" : 45000,
+  "estado" : "ACTIVA"
+} ]

@@ -1,0 +1,72 @@
+/* Fintech: interfaz académica sin frameworks. */
+:root {
+    --fondo: #f4f6fa; --panel: #ffffff; --texto: #1d2433; --suave: #6b7486; --borde: #e2e6ee;
+    --primario: #2457d6; --primario-osc: #1a43a8; --ok: #1f8a4c; --error: #c0392b; --alerta: #c77c02;
+    --lateral: #172033; --radio: 10px; --sombra: 0 1px 3px rgba(20, 30, 60, .08);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--texto); background: var(--fondo); }
+.app { display: flex; min-height: 100vh; }
+.sidebar { width: 230px; background: var(--lateral); color: #cfd6e6; padding: 18px 12px; display: flex; flex-direction: column; flex-shrink: 0; }
+.marca { font-size: 22px; font-weight: 700; color: #fff; padding: 0 10px 18px; }
+.marca span { display: block; font-size: 12px; font-weight: 400; color: #8f9ab3; letter-spacing: .08em; text-transform: uppercase; }
+nav a { display: block; padding: 9px 12px; border-radius: 8px; color: inherit; text-decoration: none; margin-bottom: 2px; }
+nav a:hover { background: rgba(255,255,255,.07); }
+nav a.activo { background: var(--primario); color: #fff; }
+.aviso-academico { margin-top: auto; font-size: 12px; color: #8f9ab3; padding: 10px; border-top: 1px solid rgba(255,255,255,.1); }
+.principal { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.topbar { display: flex; align-items: center; gap: 14px; background: var(--panel); border-bottom: 1px solid var(--borde); padding: 12px 22px; position: sticky; top: 0; z-index: 5; }
+.topbar h1 { font-size: 19px; margin: 0; flex: 1; }
+.selector-usuario { display: flex; align-items: center; gap: 8px; color: var(--suave); font-size: 13px; }
+.boton-menu { display: none; }
+main { padding: 22px; }
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; margin-bottom: 18px; }
+.tarjeta, .panel { background: var(--panel); border: 1px solid var(--borde); border-radius: var(--radio); box-shadow: var(--sombra); }
+.tarjeta { padding: 14px 16px; }
+.tarjeta .etiqueta { color: var(--suave); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+.tarjeta .valor { font-size: 22px; font-weight: 650; margin-top: 4px; overflow-wrap: anywhere; }
+.panel { padding: 16px; margin-bottom: 18px; overflow-x: auto; }
+.panel h2 { font-size: 16px; margin: 0 0 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--borde); white-space: nowrap; }
+th { color: var(--suave); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.vacio { color: var(--suave); padding: 14px 4px; }
+button, .boton { font: inherit; border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; background: var(--primario); color: #fff; }
+button:hover { background: var(--primario-osc); }
+button.secundario { background: #e8ecf5; color: var(--texto); }
+button.peligro { background: var(--error); }
+button.pequeno { padding: 4px 10px; font-size: 13px; }
+button:disabled { opacity: .55; cursor: wait; }
+.acciones { display: flex; gap: 8px; flex-wrap: wrap; }
+form.formulario { display: grid; gap: 12px; }
+form.formulario label { display: grid; gap: 4px; font-size: 13px; color: var(--suave); }
+input, select { font: inherit; padding: 8px 10px; border: 1px solid var(--borde); border-radius: 8px; background: #fff; color: var(--texto); min-width: 0; }
+.filtros { display: flex; gap: 10px; flex-wrap: wrap; align-items: end; margin-bottom: 12px; }
+.filtros label { display: grid; gap: 4px; font-size: 12px; color: var(--suave); }
+.insignia { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; background: #e8ecf5; }
+.insignia.EXITOSA, .insignia.ACTIVA, .insignia.EJECUTADA, .insignia.DESPACHADA, .insignia.REALIZADO, .insignia.NINGUNO { background: #dff3e7; color: var(--ok); }
+.insignia.RECHAZADA, .insignia.INACTIVA, .insignia.FALLIDA, .insignia.ALTO { background: #fbe3e0; color: var(--error); }
+.insignia.REVERTIDA, .insignia.CANCELADA, .insignia.PENDIENTE, .insignia.MEDIO, .insignia.BAJO { background: #fff1d6; color: var(--alerta); }
+.modal-fondo { position: fixed; inset: 0; background: rgba(15, 22, 40, .45); display: flex; align-items: center; justify-content: center; z-index: 20; padding: 16px; }
+.modal-fondo[hidden], .cargando[hidden] { display: none; }
+.modal { background: var(--panel); border-radius: 12px; width: min(480px, 100%); max-height: 90vh; overflow: auto; padding: 18px; }
+.modal header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.modal h2 { margin: 0; font-size: 18px; }
+.modal .cerrar { background: transparent; color: var(--suave); font-size: 22px; padding: 0 6px; }
+.cargando { position: fixed; inset: 0; background: rgba(255,255,255,.5); display: flex; align-items: center; justify-content: center; z-index: 30; }
+.spinner { width: 38px; height: 38px; border: 4px solid var(--borde); border-top-color: var(--primario); border-radius: 50%; animation: giro .8s linear infinite; }
+@keyframes giro { to { transform: rotate(360deg); } }
+.mensajes { position: fixed; right: 16px; bottom: 16px; display: grid; gap: 8px; z-index: 40; max-width: min(420px, calc(100vw - 32px)); }
+.mensaje { padding: 11px 14px; border-radius: 8px; color: #fff; background: var(--ok); box-shadow: 0 4px 14px rgba(0,0,0,.15); }
+.mensaje.error { background: var(--error); }
+.mensaje .codigo { font-weight: 700; display: block; font-size: 12px; opacity: .9; }
+.ruta { font-family: ui-monospace, Menlo, monospace; background: #eef2fb; padding: 6px 10px; border-radius: 6px; display: inline-block; margin: 2px 0; }
+.barra { height: 8px; background: var(--primario); border-radius: 4px; min-width: 2px; }
+@media (max-width: 820px) {
+    .sidebar { position: fixed; inset: 0 auto 0 0; transform: translateX(-100%); transition: transform .2s; z-index: 15; }
+    .sidebar.abierta { transform: none; }
+    .boton-menu { display: inline-block; background: transparent; color: var(--texto); font-size: 20px; padding: 2px 8px; }
+    .topbar { padding: 10px 12px; flex-wrap: wrap; }
+    main { padding: 14px; }
+}

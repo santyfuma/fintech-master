@@ -1,0 +1,49 @@
+[ {
+  "identificacion" : "1001",
+  "nombre" : "Laura Restrepo",
+  "correo" : "laura.restrepo@ejemplo.co",
+  "puntosAcumulados" : 53420,
+  "nivel" : "PLATINO"
+}, {
+  "identificacion" : "1002",
+  "nombre" : "Andrés Muñoz",
+  "correo" : "andres.munoz@ejemplo.co",
+  "puntosAcumulados" : 3610,
+  "nivel" : "ORO"
+}, {
+  "identificacion" : "1003",
+  "nombre" : "Camila Ospina",
+  "correo" : "camila.ospina@ejemplo.co",
+  "puntosAcumulados" : 850,
+  "nivel" : "PLATA"
+}, {
+  "identificacion" : "1004",
+  "nombre" : "Santiago Giraldo",
+  "correo" : "santiago.giraldo@ejemplo.co",
+  "puntosAcumulados" : 500,
+  "nivel" : "BRONCE"
+}, {
+  "identificacion" : "1005",
+  "nombre" : "Valentina Cardona",
+  "correo" : "valentina.cardona@ejemplo.co",
+  "puntosAcumulados" : 3850,
+  "nivel" : "ORO"
+}, {
+  "identificacion" : "1006",
+  "nombre" : "Mateo Quintero",
+  "correo" : "mateo.quintero@ejemplo.co",
+  "puntosAcumulados" : 3200,
+  "nivel" : "ORO"
+}, {
+  "identificacion" : "1007",
+  "nombre" : "Daniela Henao",
+  "correo" : "daniela.henao@ejemplo.co",
+  "puntosAcumulados" : 700,
+  "nivel" : "PLATA"
+}, {
+  "identificacion" : "1008",
+  "nombre" : "Julián Arango",
+  "correo" : "julian.arango@ejemplo.co",
+  "puntosAcumulados" : 0,
+  "nivel" : "BRONCE"
+} ]

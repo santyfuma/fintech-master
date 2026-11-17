@@ -1,0 +1,49 @@
+[ {
+  "id" : "AUD-000001",
+  "identificacionUsuario" : "1006",
+  "transaccion" : "TRX-000034",
+  "patron" : "MONTO_INUSUALMENTE_ALTO",
+  "descripcion" : "Valor 60000 mayor que 3 veces el promedio 5000.00",
+  "nivelRiesgo" : "ALTO",
+  "fecha" : "2026-10-14T10:30:00"
+}, {
+  "id" : "AUD-000002",
+  "identificacionUsuario" : "1005",
+  "transaccion" : "TRX-000041",
+  "patron" : "FRAGMENTACION_ENTRE_BILLETERAS",
+  "descripcion" : "2 billeteras distintas enviando a BIL-000008 en 10 minutos",
+  "nivelRiesgo" : "ALTO",
+  "fecha" : "2026-10-16T14:03:00"
+}, {
+  "id" : "AUD-000003",
+  "identificacionUsuario" : "1005",
+  "transaccion" : "TRX-000042",
+  "patron" : "TRANSFERENCIAS_CONSECUTIVAS_RAPIDAS",
+  "descripcion" : "3 transferencias en 5 minutos",
+  "nivelRiesgo" : "MEDIO",
+  "fecha" : "2026-10-16T14:04:00"
+}, {
+  "id" : "AUD-000004",
+  "identificacionUsuario" : "1002",
+  "transaccion" : "TRX-000045",
+  "patron" : "DESTINO_REPETITIVO",
+  "descripcion" : "3 envíos a BIL-000006 en 60 minutos",
+  "nivelRiesgo" : "MEDIO",
+  "fecha" : "2026-10-17T09:40:00"
+}, {
+  "id" : "AUD-000005",
+  "identificacionUsuario" : "1006",
+  "transaccion" : "TRX-000046",
+  "patron" : "HORARIO_NO_HABITUAL",
+  "descripcion" : "Operación a las 3 h, fuera del horario habitual del usuario",
+  "nivelRiesgo" : "BAJO",
+  "fecha" : "2026-10-18T03:00:00"
+}, {
+  "id" : "AUD-000006",
+  "identificacionUsuario" : "1007",
+  "transaccion" : "TRX-000054",
+  "patron" : "CAMBIO_BRUSCO_DE_FRECUENCIA",
+  "descripcion" : "5 transacciones en 24 horas frente a 1 en los 7 días anteriores",
+  "nivelRiesgo" : "MEDIO",
+  "fecha" : "2026-10-20T13:00:00"
+} ]

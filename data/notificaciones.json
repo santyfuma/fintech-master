@@ -1,0 +1,183 @@
+[ {
+  "id" : "NOT-000001",
+  "identificacionUsuario" : "1001",
+  "tipo" : "ASCENSO_NIVEL",
+  "mensaje" : "Subiste al nivel PLATINO con 25000 puntos",
+  "fecha" : "2026-10-01T09:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000002",
+  "identificacionUsuario" : "1002",
+  "tipo" : "ASCENSO_NIVEL",
+  "mensaje" : "Subiste al nivel ORO con 1200 puntos",
+  "fecha" : "2026-10-01T10:30:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000003",
+  "identificacionUsuario" : "1005",
+  "tipo" : "ASCENSO_NIVEL",
+  "mensaje" : "Subiste al nivel ORO con 1200 puntos",
+  "fecha" : "2026-10-01T14:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000004",
+  "identificacionUsuario" : "1006",
+  "tipo" : "ASCENSO_NIVEL",
+  "mensaje" : "Subiste al nivel ORO con 1500 puntos",
+  "fecha" : "2026-10-01T15:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000005",
+  "identificacionUsuario" : "1001",
+  "tipo" : "OPERACION_RECHAZADA",
+  "mensaje" : "Operación TRX-000014 rechazada: La billetera BIL-000007 está inactiva",
+  "fecha" : "2026-10-04T11:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000006",
+  "identificacionUsuario" : "1002",
+  "tipo" : "OPERACION_PROGRAMADA_PROXIMA",
+  "mensaje" : "La operación OPR-000001 se ejecutará el 2026-10-06T08:00",
+  "fecha" : "2026-10-05T10:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000007",
+  "identificacionUsuario" : "1001",
+  "tipo" : "OPERACION_PROGRAMADA_PROXIMA",
+  "mensaje" : "La operación OPR-000002 se ejecutará el 2026-10-10T09:00",
+  "fecha" : "2026-10-09T14:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000008",
+  "identificacionUsuario" : "1004",
+  "tipo" : "SALDO_BAJO",
+  "mensaje" : "La billetera BIL-000008 quedó con saldo bajo: 8000",
+  "fecha" : "2026-10-10T17:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000009",
+  "identificacionUsuario" : "1004",
+  "tipo" : "OPERACION_RECHAZADA",
+  "mensaje" : "Operación TRX-000029 rechazada: Saldo insuficiente en BIL-000008 para retiro de 20000",
+  "fecha" : "2026-10-11T17:30:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000010",
+  "identificacionUsuario" : "1002",
+  "tipo" : "OPERACION_PROGRAMADA_PROXIMA",
+  "mensaje" : "La operación OPR-000004 se ejecutará el 2026-10-13T08:00",
+  "fecha" : "2026-10-12T16:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000011",
+  "identificacionUsuario" : "1003",
+  "tipo" : "ASCENSO_NIVEL",
+  "mensaje" : "Subiste al nivel PLATA con 750 puntos",
+  "fecha" : "2026-10-12T16:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000012",
+  "identificacionUsuario" : "1006",
+  "tipo" : "ALERTA_SEGURIDAD",
+  "mensaje" : "Alerta de seguridad en TRX-000034: Valor 60000 mayor que 3 veces el promedio 5000.00",
+  "fecha" : "2026-10-14T10:30:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000013",
+  "identificacionUsuario" : "1005",
+  "tipo" : "ALERTA_SEGURIDAD",
+  "mensaje" : "Alerta de seguridad en TRX-000041: 2 billeteras distintas enviando a BIL-000008 en 10 minutos",
+  "fecha" : "2026-10-16T14:03:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000014",
+  "identificacionUsuario" : "1005",
+  "tipo" : "ALERTA_SEGURIDAD",
+  "mensaje" : "Alerta de seguridad en TRX-000042: 3 transferencias en 5 minutos",
+  "fecha" : "2026-10-16T14:04:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000015",
+  "identificacionUsuario" : "1002",
+  "tipo" : "ALERTA_SEGURIDAD",
+  "mensaje" : "Alerta de seguridad en TRX-000045: 3 envíos a BIL-000006 en 60 minutos",
+  "fecha" : "2026-10-17T09:40:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000016",
+  "identificacionUsuario" : "1006",
+  "tipo" : "ALERTA_SEGURIDAD",
+  "mensaje" : "Alerta de seguridad en TRX-000046: Operación a las 3 h, fuera del horario habitual del usuario",
+  "fecha" : "2026-10-18T03:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000017",
+  "identificacionUsuario" : "1001",
+  "tipo" : "CANJE_REALIZADO",
+  "mensaje" : "Canjeaste 1000 millas de viaje por 8000 puntos (CAN-000001)",
+  "fecha" : "2026-10-18T12:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000018",
+  "identificacionUsuario" : "1002",
+  "tipo" : "CANJE_REALIZADO",
+  "mensaje" : "Canjeaste Bono de café por 500 puntos (CAN-000002)",
+  "fecha" : "2026-10-18T12:30:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000019",
+  "identificacionUsuario" : "1002",
+  "tipo" : "OPERACION_PROGRAMADA_PROXIMA",
+  "mensaje" : "La operación OPR-000006 se ejecutará el 2026-10-20T08:00",
+  "fecha" : "2026-10-19T13:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000020",
+  "identificacionUsuario" : "1007",
+  "tipo" : "ASCENSO_NIVEL",
+  "mensaje" : "Subiste al nivel PLATA con 540 puntos",
+  "fecha" : "2026-10-20T09:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000021",
+  "identificacionUsuario" : "1007",
+  "tipo" : "ALERTA_SEGURIDAD",
+  "mensaje" : "Alerta de seguridad en TRX-000054: 5 transacciones en 24 horas frente a 1 en los 7 días anteriores",
+  "fecha" : "2026-10-20T13:00:00",
+  "estado" : "DESPACHADA"
+}, {
+  "id" : "NOT-000022",
+  "identificacionUsuario" : "1004",
+  "tipo" : "OPERACION_RECHAZADA",
+  "mensaje" : "Operación TRX-000055 rechazada: Saldo insuficiente en BIL-000008 para retiro de 500000",
+  "fecha" : "2026-10-25T10:00:00",
+  "estado" : "PENDIENTE"
+}, {
+  "id" : "NOT-000023",
+  "identificacionUsuario" : "1002",
+  "tipo" : "OPERACION_PROGRAMADA_PROXIMA",
+  "mensaje" : "La operación OPR-000011 se ejecutará el 2026-11-03T08:00",
+  "fecha" : "2026-11-02T14:30:00",
+  "estado" : "PENDIENTE"
+}, {
+  "id" : "NOT-000024",
+  "identificacionUsuario" : "1001",
+  "tipo" : "OPERACION_PROGRAMADA_PROXIMA",
+  "mensaje" : "La operación OPR-000005 se ejecutará el 2026-11-10T09:00",
+  "fecha" : "2026-11-09T17:00:00",
+  "estado" : "PENDIENTE"
+}, {
+  "id" : "NOT-000025",
+  "identificacionUsuario" : "1002",
+  "tipo" : "OPERACION_PROGRAMADA_PROXIMA",
+  "mensaje" : "La operación OPR-000012 se ejecutará el 2026-11-10T08:00",
+  "fecha" : "2026-11-09T17:00:00",
+  "estado" : "PENDIENTE"
+}, {
+  "id" : "NOT-000026",
+  "identificacionUsuario" : "1002",
+  "tipo" : "OPERACION_PROGRAMADA_PROXIMA",
+  "mensaje" : "La operación OPR-000013 se ejecutará el 2026-11-17T08:00",
+  "fecha" : "2026-11-16T20:40:04.4903065",
+  "estado" : "PENDIENTE"
+} ]

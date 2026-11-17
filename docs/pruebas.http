@@ -1,0 +1,199 @@
+### Pruebas de la API (formato REST Client / IntelliJ HTTP Client)
+# Ejecutar en orden sobre un directorio de datos VACÍO: data/ trae datos de demostración,
+# así que arranque con otra carpeta, por ejemplo:
+#   mvnw.cmd spring-boot:run "-Dspring-boot.run.arguments=--fintech.datos.directorio=datos-prueba" Los identificadores esperados asumen ese
+# estado inicial. Datos ficticios: no use datos reales.
+@base = http://localhost:8080
+
+### 1. Registrar usuarios (201) y duplicado (409 USUARIO_YA_EXISTE)
+POST {{base}}/api/usuarios
+Content-Type: application/json
+
+{"identificacion": "1001", "nombre": "Ana Gómez", "correo": "ana@correo.co"}
+
+###
+POST {{base}}/api/usuarios
+Content-Type: application/json
+
+{"identificacion": "2002", "nombre": "Luis Pérez", "correo": "luis@correo.co"}
+
+###
+POST {{base}}/api/usuarios
+Content-Type: application/json
+
+{"identificacion": "1001", "nombre": "Otra", "correo": "otra@correo.co"}
+
+### Validación HTTP (400 VALIDACION_FALLIDA)
+POST {{base}}/api/usuarios
+Content-Type: application/json
+
+{"identificacion": "", "nombre": "", "correo": "no-es-correo"}
+
+### 2. Billeteras: BIL-000001 y BIL-000002 de 1001, BIL-000003 de 2002
+POST {{base}}/api/usuarios/1001/billeteras
+Content-Type: application/json
+
+{"nombre": "Ahorros", "tipo": "AHORRO"}
+
+###
+POST {{base}}/api/usuarios/1001/billeteras
+Content-Type: application/json
+
+{"nombre": "Compras", "tipo": "COMPRAS"}
+
+###
+POST {{base}}/api/usuarios/2002/billeteras
+Content-Type: application/json
+
+{"nombre": "Ahorros", "tipo": "AHORRO"}
+
+### 3. Recarga (15 puntos)
+POST {{base}}/api/transacciones/recargas
+Content-Type: application/json
+
+{"billeteraDestino": "BIL-000001", "valor": 1500.50}
+
+### Valor inválido (400, no se registra)
+POST {{base}}/api/transacciones/recargas
+Content-Type: application/json
+
+{"billeteraDestino": "BIL-000001", "valor": 0}
+
+### 4. Retiro y retiro sin saldo (409 SALDO_INSUFICIENTE, queda RECHAZADA)
+POST {{base}}/api/transacciones/retiros
+Content-Type: application/json
+
+{"billeteraOrigen": "BIL-000001", "valor": 200}
+
+###
+POST {{base}}/api/transacciones/retiros
+Content-Type: application/json
+
+{"billeteraOrigen": "BIL-000002", "valor": 10}
+
+###
+GET {{base}}/api/billeteras/BIL-000002/transacciones
+
+### 5. Transferencia y misma billetera (400)
+POST {{base}}/api/transacciones/transferencias
+Content-Type: application/json
+
+{"billeteraOrigen": "BIL-000001", "billeteraDestino": "BIL-000003", "valor": 300.25}
+
+###
+POST {{base}}/api/transacciones/transferencias
+Content-Type: application/json
+
+{"billeteraOrigen": "BIL-000001", "billeteraDestino": "BIL-000001", "valor": 5}
+
+###
+GET {{base}}/api/billeteras/BIL-000001/saldo
+
+###
+GET {{base}}/api/usuarios/1001/saldo-total
+
+### 6. Reversión de la última (pila) y repetición (409)
+POST {{base}}/api/usuarios/1001/reversion/ultima
+
+###
+POST {{base}}/api/transacciones/TRX-000004/reversion
+
+### Retiro no reversible (409 OPERACION_NO_REVERSIBLE)
+POST {{base}}/api/transacciones/TRX-000002/reversion
+
+### 7. Programar una transferencia semanal (ajuste la fecha a unos minutos en el futuro)
+POST {{base}}/api/operaciones-programadas
+Content-Type: application/json
+
+{"tipo": "TRANSFERENCIA", "valor": 100, "billeteraOrigen": "BIL-000001", "billeteraDestino": "BIL-000003",
+ "fechaEjecucion": "2030-01-01T09:00:00", "periodicidad": "SEMANAL"}
+
+###
+GET {{base}}/api/operaciones-programadas/proxima
+
+### 8. Simulación: procesa las vencidas según el reloj (solo ejecuta las que ya vencieron)
+POST {{base}}/api/operaciones-programadas/procesar
+
+###
+GET {{base}}/api/operaciones-programadas?estado=PENDIENTE
+
+### 9. Puntos, niveles y catálogo
+GET {{base}}/api/usuarios/1001/puntos
+
+###
+GET {{base}}/api/niveles
+
+###
+GET {{base}}/api/beneficios
+
+### Canje: en esta secuencia 1001 tiene menos de 500 puntos → 409 PUNTOS_INSUFICIENTES
+POST {{base}}/api/usuarios/1001/canjes
+Content-Type: application/json
+
+{"beneficio": "BONO_CAFE"}
+
+### 10. Ascenso de nivel: 501 puntos para 2002 → PLATA
+POST {{base}}/api/transacciones/recargas
+Content-Type: application/json
+
+{"billeteraDestino": "BIL-000003", "valor": 50100}
+
+###
+GET {{base}}/api/usuarios/2002/notificaciones
+
+### 11. Detección: tres transferencias seguidas en menos de 5 minutos (la tercera queda MEDIO)
+POST {{base}}/api/transacciones/transferencias
+Content-Type: application/json
+
+{"billeteraOrigen": "BIL-000003", "billeteraDestino": "BIL-000001", "valor": 10}
+
+###
+POST {{base}}/api/transacciones/transferencias
+Content-Type: application/json
+
+{"billeteraOrigen": "BIL-000003", "billeteraDestino": "BIL-000002", "valor": 10}
+
+###
+POST {{base}}/api/transacciones/transferencias
+Content-Type: application/json
+
+{"billeteraOrigen": "BIL-000003", "billeteraDestino": "BIL-000001", "valor": 15}
+
+###
+GET {{base}}/api/auditoria
+
+###
+GET {{base}}/api/notificaciones/pendientes
+
+###
+POST {{base}}/api/notificaciones/despachar
+
+### 12. Analítica
+GET {{base}}/api/reportes/billeteras-mas-usadas?cantidad=3
+
+###
+GET {{base}}/api/reportes/frecuencia-por-tipo
+
+###
+GET {{base}}/api/reportes/monto-movilizado?desde=2026-01-01T00:00:00&hasta=2031-01-01T00:00:00
+
+###
+GET {{base}}/api/reportes/usuario-mas-activo?desde=2026-01-01T00:00:00&hasta=2031-01-01T00:00:00
+
+###
+GET {{base}}/api/reportes/transacciones-mayor-valor?cantidad=3
+
+### 13. Grafo, rutas y ciclos
+GET {{base}}/api/grafo/transferencias?criterio=MONTO
+
+###
+GET {{base}}/api/grafo/rutas?origen=2002&destino=1001
+
+###
+GET {{base}}/api/grafo/ciclos?usuario=1001&longitudMaxima=4
+
+### 14. Benchmark
+GET {{base}}/api/benchmark?comparacion=PRIORIDAD&elementos=1000&repeticiones=5
+
+### Persistencia: reinicie la aplicación y consulte; los datos se conservan
+GET {{base}}/api/billeteras/BIL-000003/transacciones

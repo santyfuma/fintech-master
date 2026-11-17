@@ -1,0 +1,15 @@
+[ {
+  "id" : "CAN-000001",
+  "identificacionUsuario" : "1001",
+  "beneficio" : "MILLAS - 1000 millas de viaje",
+  "puntosDescontados" : 8000,
+  "fecha" : "2026-10-18T12:00:00",
+  "estado" : "REALIZADO"
+}, {
+  "id" : "CAN-000002",
+  "identificacionUsuario" : "1002",
+  "beneficio" : "BONO_CAFE - Bono de café",
+  "puntosDescontados" : 500,
+  "fecha" : "2026-10-18T12:30:00",
+  "estado" : "REALIZADO"
+} ]
